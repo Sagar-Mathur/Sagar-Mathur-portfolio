@@ -10,6 +10,12 @@ import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
 
 function HeroSection() {
+  const skills = [
+    'HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Next.js', 'Bootstrap',
+    'Tailwind CSS', 'Material UI', 'SCSS',
+    'Redux', 'Zustand', 'Node.js', 'Express.js', 'MongoDB', 'RESTful APIs',
+    'Git', 'GitHub', 'Bitbucket'
+  ];
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
       <Image
@@ -46,14 +52,14 @@ function HeroSection() {
             >
               <BsLinkedin size={30} />
             </Link>
-            <Link
-              href={personalData.facebook}
-              target='_blank'
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
-            >
-              <FaFacebook size={30} />
-            </Link>
-            <Link
+            {/* <Link
+                href={personalData?.facebook}
+                target='_blank'
+                className="transition-all text-pink-500 hover:scale-125 duration-300"
+              >
+                <FaFacebook size={30} />
+              </Link> */}
+            {/* <Link
               href={personalData.leetcode}
               target='_blank'
               className="transition-all text-pink-500 hover:scale-125 duration-300"
@@ -66,7 +72,7 @@ function HeroSection() {
               className="transition-all text-pink-500 hover:scale-125 duration-300"
             >
               <FaTwitterSquare size={30} />
-            </Link>
+            </Link> */}
           </div>
 
           <div className="flex items-center gap-3">
@@ -108,30 +114,19 @@ function HeroSection() {
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
                 <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Abu Said</span>
+                <span className="text-amber-300">{personalData.name}</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">React</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NextJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Redux</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Express</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NestJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MySql</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MongoDB</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Docker</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">AWS</span>
-                <span className="text-gray-400">{"'],"}</span>
+                {skills.map((skill,index) => (
+                  <>
+                    <span className="text-amber-300">{skill}</span>
+                    <span style={{display:index === skills.length-1 ? "none": ""}} className="text-gray-400">{"', '"}</span>
+                  </>
+                ))}
+                <span className="text-gray-400">{"],"}</span>
               </div>
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>
