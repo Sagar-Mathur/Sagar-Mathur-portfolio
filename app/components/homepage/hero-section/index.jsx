@@ -122,7 +122,7 @@ function HeroSection() {
                 <span className="text-gray-400">{`['`}</span>
                 {skills.map((skill,index) => (
                   <>
-                    <span className="text-amber-300">{skill}</span>
+                    <span key={index} className="text-amber-300">{skill}</span>
                     <span style={{display:index === skills.length-1 ? "none": ""}} className="text-gray-400">{"', '"}</span>
                   </>
                 ))}
